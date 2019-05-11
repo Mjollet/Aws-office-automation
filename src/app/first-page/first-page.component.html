@@ -1,0 +1,36 @@
+<div class="contener">
+   
+  <h2>Welcome & Look for your advice ! </h2>
+  <br>
+  <!-- <h1>{{ title }}</h1> -->
+  <img width="300" alt="Reso Logo" src="../../../../assets/Lookoulook.jpeg">
+
+
+  <br><br><br>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Employee Name" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+
+  <br>
+
+  <!-- <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Select one" aria-label="Number" matInput [formControl]="myControler" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let device of filteredDevices | async" [value]="device">
+          {{device}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form> -->
+
+</div>
