@@ -1,0 +1,10 @@
+{
+    "AppSyncApiName": "lookoulook",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognitoa03288aa",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

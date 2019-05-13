@@ -14,8 +14,13 @@ import { MyNavComponent } from './my-nav/my-nav.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { SecondPageComponent } from './second-page/second-page.component';
 import { ThirdPageComponent } from './third-page/third-page.component';
-import { MyLoginComponent } from './my-login/my-login.component';
 import { CustomMaterialModule } from './material.module';
+
+import {AmplifyAngularModule, AmplifyService} from 'aws-amplify-angular';
+import { AuthComponent } from './auth/auth.component';
+import { ProfileComponent } from './profile/profile.component';
+
+import { MDBBootstrapModule } from 'angular-bootstrap-md'; 
 
 
 
@@ -32,7 +37,8 @@ const appRoutes: Routes = [
     FirstPageComponent,
     SecondPageComponent,
     ThirdPageComponent,
-    MyLoginComponent
+    AuthComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,9 +60,11 @@ const appRoutes: Routes = [
     MatPaginatorModule, 
     MatTableModule, 
     MatSortModule,
-    MatDialogModule
+    MatDialogModule,
+    AmplifyAngularModule,
+    MDBBootstrapModule 
   ],
-  providers: [],
+  providers: [AmplifyService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

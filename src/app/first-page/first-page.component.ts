@@ -14,12 +14,6 @@ export class FirstPageComponent implements OnInit {
   options: string[] = ['Jean Jacques', 'Camille Philibert', 'Bertrand'];
   filteredOptions: Observable<string[]>;
 
-   //Second auto-complete
-
-  //  myControler = new FormControl();
-  //  devices: string[] = ['103 hearphone', '102 screen', '101 Laptop'];
-  //  filteredDevices: Observable<string[]>;
-
   constructor() {}
 
   ngOnInit() {

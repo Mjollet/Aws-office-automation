@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "lookoulook-dev-20190512204952-authRole",
+            "UnauthRoleArn": "arn:aws:iam::004670368112:role/lookoulook-dev-20190512204952-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::004670368112:role/lookoulook-dev-20190512204952-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "lookoulook-dev-20190512204952-deployment",
+            "UnauthRoleName": "lookoulook-dev-20190512204952-unauthRole",
+            "StackName": "lookoulook-dev-20190512204952",
+            "StackId": "arn:aws:cloudformation:eu-west-1:004670368112:stack/lookoulook-dev-20190512204952/ba7aa250-74e6-11e9-b3c7-069f6d7e1780"
+        },
+        "categories": {
+            "auth": {
+                "cognitoa03288aa": {}
+            }
+        }
+    }
+}

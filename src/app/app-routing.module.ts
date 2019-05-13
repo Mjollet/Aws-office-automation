@@ -1,14 +1,29 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {AppComponent} from './app.component';
-import {MyLoginComponent} from './my-login/my-login.component';
+import {ProfileComponent} from './profile/profile.component';
+import {AuthComponent} from './auth/auth.component';
+import {MyNavComponent} from './my-nav/my-nav.component';
 
 
-const routes: Routes = [
-  { path: 'user', component: AppComponent },
-  { path: 'login', component: MyLoginComponent },
-  {path : '', component : MyLoginComponent}
+const routes: Routes = [{
+  path: "profile",
+  component: ProfileComponent
+},
+{
+  path: "login",
+  component: AuthComponent
+},
+// {path:'**',
+// redirectTo: 'login',
+// pathMatch: 'full'
+// }
+{
+  path:'my-nav',
+  component: MyNavComponent },
+
+
+
 ];
 
 @NgModule({
