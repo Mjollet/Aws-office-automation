@@ -3,7 +3,9 @@ query GetUser($id: ID!) {
   getUser(id: $id) {
     id
     username
-    password
+    firstName
+    lastName
+    bio
   }
 }
 query ListUsers(
@@ -15,7 +17,9 @@ query ListUsers(
     items {
       id
       username
-      password
+      firstName
+      lastName
+      bio
     }
     nextToken
   }

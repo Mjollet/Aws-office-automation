@@ -8,13 +8,17 @@ import * as Observable from "zen-observable";
 export type CreateUserInput = {
   id?: string | null;
   username: string;
-  password?: string | null;
+  firstName?: string | null;
+  lastName?: string | null;
+  bio?: string | null;
 };
 
 export type UpdateUserInput = {
   id: string;
   username?: string | null;
-  password?: string | null;
+  firstName?: string | null;
+  lastName?: string | null;
+  bio?: string | null;
 };
 
 export type DeleteUserInput = {
@@ -24,7 +28,9 @@ export type DeleteUserInput = {
 export type ModelUserFilterInput = {
   id?: ModelIDFilterInput | null;
   username?: ModelStringFilterInput | null;
-  password?: ModelStringFilterInput | null;
+  firstName?: ModelStringFilterInput | null;
+  lastName?: ModelStringFilterInput | null;
+  bio?: ModelStringFilterInput | null;
   and?: Array<ModelUserFilterInput | null> | null;
   or?: Array<ModelUserFilterInput | null> | null;
   not?: ModelUserFilterInput | null;
@@ -60,28 +66,36 @@ export type CreateUserMutation = {
   __typename: "User";
   id: string;
   username: string;
-  password: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  bio: string | null;
 };
 
 export type UpdateUserMutation = {
   __typename: "User";
   id: string;
   username: string;
-  password: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  bio: string | null;
 };
 
 export type DeleteUserMutation = {
   __typename: "User";
   id: string;
   username: string;
-  password: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  bio: string | null;
 };
 
 export type GetUserQuery = {
   __typename: "User";
   id: string;
   username: string;
-  password: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  bio: string | null;
 };
 
 export type ListUsersQuery = {
@@ -90,7 +104,9 @@ export type ListUsersQuery = {
     __typename: "User";
     id: string;
     username: string;
-    password: string | null;
+    firstName: string | null;
+    lastName: string | null;
+    bio: string | null;
   } | null> | null;
   nextToken: string | null;
 };
@@ -99,21 +115,27 @@ export type OnCreateUserSubscription = {
   __typename: "User";
   id: string;
   username: string;
-  password: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  bio: string | null;
 };
 
 export type OnUpdateUserSubscription = {
   __typename: "User";
   id: string;
   username: string;
-  password: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  bio: string | null;
 };
 
 export type OnDeleteUserSubscription = {
   __typename: "User";
   id: string;
   username: string;
-  password: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  bio: string | null;
 };
 
 @Injectable({
@@ -126,7 +148,9 @@ export class APIService {
           __typename
           id
           username
-          password
+          firstName
+          lastName
+          bio
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -143,7 +167,9 @@ export class APIService {
           __typename
           id
           username
-          password
+          firstName
+          lastName
+          bio
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -160,7 +186,9 @@ export class APIService {
           __typename
           id
           username
-          password
+          firstName
+          lastName
+          bio
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -177,7 +205,9 @@ export class APIService {
           __typename
           id
           username
-          password
+          firstName
+          lastName
+          bio
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -200,7 +230,9 @@ export class APIService {
             __typename
             id
             username
-            password
+            firstName
+            lastName
+            bio
           }
           nextToken
         }
@@ -227,7 +259,9 @@ export class APIService {
           __typename
           id
           username
-          password
+          firstName
+          lastName
+          bio
         }
       }`
     )
@@ -240,7 +274,9 @@ export class APIService {
           __typename
           id
           username
-          password
+          firstName
+          lastName
+          bio
         }
       }`
     )
@@ -253,7 +289,9 @@ export class APIService {
           __typename
           id
           username
-          password
+          firstName
+          lastName
+          bio
         }
       }`
     )

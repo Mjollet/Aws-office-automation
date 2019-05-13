@@ -3,20 +3,26 @@ subscription OnCreateUser {
   onCreateUser {
     id
     username
-    password
+    firstName
+    lastName
+    bio
   }
 }
 subscription OnUpdateUser {
   onUpdateUser {
     id
     username
-    password
+    firstName
+    lastName
+    bio
   }
 }
 subscription OnDeleteUser {
   onDeleteUser {
     id
     username
-    password
+    firstName
+    lastName
+    bio
   }
 }

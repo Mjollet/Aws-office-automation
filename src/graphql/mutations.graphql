@@ -3,20 +3,26 @@ mutation CreateUser($input: CreateUserInput!) {
   createUser(input: $input) {
     id
     username
-    password
+    firstName
+    lastName
+    bio
   }
 }
 mutation UpdateUser($input: UpdateUserInput!) {
   updateUser(input: $input) {
     id
     username
-    password
+    firstName
+    lastName
+    bio
   }
 }
 mutation DeleteUser($input: DeleteUserInput!) {
   deleteUser(input: $input) {
     id
     username
-    password
+    firstName
+    lastName
+    bio
   }
 }
