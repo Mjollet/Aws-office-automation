@@ -14,13 +14,16 @@ const routes: Routes = [{
   path: "login",
   component: AuthComponent
 },
-// {path:'**',
-// redirectTo: 'login',
-// pathMatch: 'full'
-// }
+
 {
   path:'my-nav',
   component: MyNavComponent },
+  
+ {path:'**',
+ redirectTo: 'login',
+ pathMatch: 'full'
+ },
+
 
 
 

@@ -8,7 +8,9 @@ interface DEVICE {
   employeid: number,
   nom: string,
   prenom: string,
-  accounttype: string
+  accounttype: string,
+  startdate: string,
+  enddate: string
 }
 
  
@@ -23,7 +25,7 @@ interface DEVICE {
 })
 
 export class SecondPageComponent implements OnInit {
-  displayedColumns: string[] = ['deviceid', 'version', 'employeid', 'nom' , 'prenom', 'accounttype'];
+  displayedColumns: string[] = ['deviceid', 'version', 'employeid', 'nom' , 'prenom', 'accounttype','startdate', 'enddate'];
   dataSource: MatTableDataSource<DEVICE>;
 
   applyFilter(filterValue: string) {
