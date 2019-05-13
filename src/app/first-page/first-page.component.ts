@@ -14,6 +14,8 @@ export class FirstPageComponent implements OnInit {
   options: string[] = ['Jean Jacques', 'Camille Philibert', 'Bertrand'];
   filteredOptions: Observable<string[]>;
 
+  
+
   constructor() {}
 
   ngOnInit() {
@@ -25,7 +27,7 @@ export class FirstPageComponent implements OnInit {
     
 
   }
-
+        
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

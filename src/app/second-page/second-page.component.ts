@@ -1,21 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
+import { Http, Response } from '@angular/http';
 
-export interface PeriodicElement {
-  employeId: number,
-  name: string; 
-  deviceId: number,
-  devicedescription: string,
+interface DEVICE {
+  deviceid: number,
+  version: number,
+  employeid: number,
+  nom: string,
+  prenom: string,
+  accounttype: string
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {employeId: 1, name: 'Jean Jacques', deviceId: 103, devicedescription: 'hearphone'},
-  {employeId: 2, name: 'Camille Philibert', deviceId: 101, devicedescription:  'screen'},
-  {employeId: 3, name: 'Bertrand', deviceId: 102, devicedescription:  'laptop'}
-];
  
- 
-
 /**
  * @title Table with filtering
  */
@@ -27,15 +23,33 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class SecondPageComponent implements OnInit {
-  displayedColumns: string[] = ['employeId', 'name', 'deviceId', 'devicedescription'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  displayedColumns: string[] = ['deviceid', 'version', 'employeid', 'nom' , 'prenom', 'accounttype'];
+  dataSource: MatTableDataSource<DEVICE>;
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  constructor() { }
+  
 
   ngOnInit() {
+  this.getContacts();
   }
 
+  private apiUrl = 'https://1k2qqyg3tj.execute-api.eu-west-1.amazonaws.com/dev2/';
+
+  constructor(private http: Http){
+    console.log('Hello');
+  }
+
+  getData(){
+    return this.http.get(this.apiUrl + 'user/GetTableDevice')
+      .map((res: Response) => res.json ())
+  }
+
+  getContacts(){
+    this.getData().subscribe(data => {
+      console.log(data);
+      this.dataSource = new MatTableDataSource(data.message.Items);
+    })
+  }
 }

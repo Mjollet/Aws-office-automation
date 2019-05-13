@@ -13,13 +13,14 @@ import { AppComponent } from './app.component';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { SecondPageComponent } from './second-page/second-page.component';
-import { ThirdPageComponent } from './third-page/third-page.component';
+import { ProfileComponent } from './profile/profile.component';
 import { CustomMaterialModule } from './material.module';
 
 import {AmplifyAngularModule, AmplifyService} from 'aws-amplify-angular';
 import { AuthComponent } from './auth/auth.component';
-import { ProfileComponent } from './profile/profile.component';
+import {HttpModule} from '@angular/http';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md'; 
 
 
@@ -27,7 +28,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 const appRoutes: Routes = [
   { path: 'first-page' , component: FirstPageComponent },
   { path: 'second-page', component: SecondPageComponent },
-  { path: 'third-page', component: ThirdPageComponent },
+  { path: 'profile-page', component: ProfileComponent },
 ];
 
 @NgModule({
@@ -36,12 +37,13 @@ const appRoutes: Routes = [
     MyNavComponent,
     FirstPageComponent,
     SecondPageComponent,
-    ThirdPageComponent,
     AuthComponent,
     ProfileComponent,
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    NgbModule,
     CustomMaterialModule,
     FormsModule,
     ReactiveFormsModule,
@@ -62,9 +64,9 @@ const appRoutes: Routes = [
     MatSortModule,
     MatDialogModule,
     AmplifyAngularModule,
-    MDBBootstrapModule 
+    MDBBootstrapModule.forRoot()
   ],
-  providers: [AmplifyService],
+  providers: [AmplifyService, AppComponent],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

@@ -5,9 +5,9 @@
     "javascript": {
         "framework": "angular",
         "config": {
-            "SourceDir": "src",
-            "DistributionDir": "dist/lookoulook",
-            "BuildCommand": "npm run-script build",
+            "SourceDir": "",
+            "DistributionDir": "dist/my-app",
+            "BuildCommand": "npm.cmd run-script build",
             "StartCommand": "ng serve"
         }
     },
