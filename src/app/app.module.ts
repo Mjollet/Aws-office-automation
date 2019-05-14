@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule, MatInputModule, MatPaginatorModule, MatTableModule, MatSortModule, MatDialogModule} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +19,7 @@ import { CustomMaterialModule } from './material.module';
 import {AmplifyAngularModule, AmplifyService} from 'aws-amplify-angular';
 import { AuthComponent } from './auth/auth.component';
 import {HttpModule} from '@angular/http';
+import { FormsModule} from '@angular/forms';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md'; 
@@ -64,7 +65,7 @@ const appRoutes: Routes = [
     MatSortModule,
     MatDialogModule,
     AmplifyAngularModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot() 
   ],
   providers: [AmplifyService, AppComponent],
   bootstrap: [AppComponent],

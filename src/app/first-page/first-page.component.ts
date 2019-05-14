@@ -11,7 +11,7 @@ import {map, startWith} from 'rxjs/operators';
 export class FirstPageComponent implements OnInit {
   
   myControl = new FormControl();
-  options: string[] = ['Jean Jacques', 'Camille Philibert', 'Bertrand'];
+  options: string[] = ['Raphael Jubrowski', 'Eric Clemence', 'Mehdi Iraqui','Martin Guillot'];
   filteredOptions: Observable<string[]>;
 
   
@@ -36,7 +36,8 @@ export class FirstPageComponent implements OnInit {
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
 
   }
-  
+
+ 
   
 
 }

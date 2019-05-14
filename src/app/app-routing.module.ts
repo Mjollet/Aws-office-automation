@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {ProfileComponent} from './profile/profile.component';
 import {AuthComponent} from './auth/auth.component';
 import {MyNavComponent} from './my-nav/my-nav.component';
-
+import {FirstPageComponent} from './first-page/first-page.component';
+import {SecondPageComponent} from './second-page/second-page.component';
 
 const routes: Routes = [{
   path: "profile",
@@ -18,6 +19,17 @@ const routes: Routes = [{
 {
   path:'my-nav',
   component: MyNavComponent },
+
+{
+  path:'first-page',
+  component: FirstPageComponent },
+
+{
+  path:'second-page',
+  component: SecondPageComponent },
+  
+
+
   
  {path:'**',
  redirectTo: 'login',
